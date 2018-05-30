@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ecrangradientlogo"
+    tools:context=".FormActivity">
+
+    <TextView
+        android:id="@+id/lastNameInput"
+        android:layout_width="66dp"
+        android:layout_height="24dp"
+        android:layout_marginBottom="44dp"
+        android:layout_marginLeft="76dp"
+        android:layout_marginStart="76dp"
+        android:gravity="left"
+        android:text="Nume:"
+        android:textColor="#ffffff"
+        android:textSize="19dp"
+        app:layout_constraintBottom_toTopOf="@+id/birthDateInput"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextNume"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="36dp"
+        android:layout_marginStart="12dp"
+        android:background="#ffffff"
+        app:layout_constraintBottom_toTopOf="@+id/birthDateInput"
+        app:layout_constraintEnd_toStartOf="@+id/nameInput"
+        app:layout_constraintStart_toEndOf="@+id/lastNameInput" />
+
+    <TextView
+        android:id="@+id/nameInput"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginBottom="44dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:gravity="left"
+        android:text="Prenume:"
+        android:textColor="#ffffff"
+        android:textSize="19dp"
+        app:layout_constraintBottom_toTopOf="@+id/emailInput"
+        app:layout_constraintEnd_toStartOf="@+id/editTextPrenume" />
+
+
+    <EditText
+        android:id="@+id/editTextPrenume"
+        android:layout_width="283dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
+        android:background="#ffffff"
+        app:layout_constraintBottom_toTopOf="@+id/emailInput"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <TextView
+        android:id="@+id/dateTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="44dp"
+        android:layout_marginLeft="76dp"
+        android:layout_marginStart="76dp"
+        android:gravity="left"
+        android:text="Data Nasterii:"
+        android:textColor="#ffffff"
+        android:textSize="19dp"
+        app:layout_constraintBottom_toTopOf="@+id/adressInput"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/birthDateInput"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="36dp"
+        android:layout_marginStart="12dp"
+        android:background="#ffffff"
+        app:layout_constraintBottom_toTopOf="@+id/adressInput"
+        app:layout_constraintEnd_toStartOf="@+id/emailTextView"
+        app:layout_constraintStart_toEndOf="@+id/dateTextView" />
+
+
+    <TextView
+        android:id="@+id/emailTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="44dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="left"
+        android:text="Email:"
+        android:textColor="#ffffff"
+        android:textSize="19dp"
+        app:layout_constraintBottom_toTopOf="@+id/adressInput"
+        app:layout_constraintEnd_toStartOf="@+id/emailInput" />
+
+    <EditText
+        android:id="@+id/emailInput"
+        android:layout_width="283dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
+        android:background="#ffffff"
+        app:layout_constraintBottom_toTopOf="@+id/adressInput"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="42dp"
+        android:layout_marginLeft="76dp"
+        android:layout_marginStart="76dp"
+        android:gravity="left"
+        android:text="Adresa:"
+        android:textColor="#ffffff"
+        android:textSize="19dp"
+        app:layout_constraintBottom_toTopOf="@+id/regulament"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/adressInput"
+        android:layout_width="725dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginStart="8dp"
+        android:background="#ffffff"
+        app:layout_constraintBottom_toTopOf="@+id/regulament"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toEndOf="@+id/textView" />
+
+
+    <Button
+        android:id="@+id/regulament"
+        style="@style/AppTheme.RoundedCornerMaterialButton"
+        android:layout_width="250dp"
+        android:layout_height="104px"
+        android:layout_marginBottom="24dp"
+        android:layout_marginLeft="76dp"
+        android:layout_marginStart="76dp"
+        android:fontFamily="@font/gothamblack"
+        android:onClick="didTapContinue"
+        android:text="@string/iagree"
+        android:textColor="#ffffff"
+        android:textSize="22dp"
+        app:layout_constraintBottom_toTopOf="@+id/continueButton"
+        app:layout_constraintStart_toStartOf="parent"></Button>
+
+    <Button
+        android:id="@+id/continueButton"
+        style="@style/AppTheme.RoundedCornerMaterialButton"
+        android:layout_width="650dp"
+        android:layout_height="104px"
+        android:layout_marginBottom="36dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="76dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="76dp"
+        android:fontFamily="@font/gothamblack"
+        android:onClick="didTapContinue"
+        android:text="CONTINUĂ"
+        android:textColor="#ffffff"
+        android:textSize="22dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"></Button>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="512dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="898dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="76dp" />
+
+
+</android.support.constraint.ConstraintLayout>

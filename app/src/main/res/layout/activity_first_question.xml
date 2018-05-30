@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ecrangradientlogo"
+    android:orientation="vertical"
+    tools:context=".FirstQuestion">
+
+
+    <TextView
+        android:id="@+id/textQuestion"
+        android:layout_width="718dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/montserratbold"
+        android:textColor="#ffffff"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.302"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.118" />
+
+
+    <CheckBox
+        android:id="@+id/checkbox1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="76dp"
+        android:layout_marginLeft="76dp"
+        android:layout_marginRight="76dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="44dp"
+        android:button="@drawable/checkbox"
+        android:fontFamily="@font/montserratbold"
+        android:onClick="onCheckboxClicked"
+        android:textColor="#ffffff"
+        android:textSize="24sp"
+        android:paddingLeft="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.001"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textQuestion" />
+
+    <CheckBox
+        android:id="@+id/checkbox2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="76dp"
+        android:layout_marginLeft="76dp"
+        android:layout_marginRight="76dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="44dp"
+        android:button="@drawable/checkbox"
+        android:fontFamily="@font/montserratbold"
+        android:textColor="#ffffff"
+        android:textSize="24sp"
+        android:paddingLeft="15dp"
+        android:onClick="onCheckboxClicked"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.001"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox1" />
+
+
+    <CheckBox
+        android:id="@+id/checkbox3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="200dp"
+        android:layout_marginLeft="76dp"
+        android:layout_marginRight="200dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="44dp"
+        android:button="@drawable/checkbox"
+        android:fontFamily="@font/montserratbold"
+        android:onClick="onCheckboxClicked"
+        android:textColor="#ffffff"
+        android:textSize="24sp"
+        android:paddingLeft="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.001"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox2" />
+
+
+    <Button
+        android:id="@+id/continueButton"
+        style="@style/AppTheme.RoundedCornerMaterialButton"
+        android:layout_width="600dp"
+        android:layout_height="104px"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="48dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/gothamblack"
+        android:onClick="didTapContinueQuiz"
+        android:text="CONTINUĂ"
+        android:textColor="#ffffff"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.199"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"></Button>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="77dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="350dp" />
+
+</android.support.constraint.ConstraintLayout>
