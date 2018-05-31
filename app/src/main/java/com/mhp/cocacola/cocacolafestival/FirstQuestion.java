@@ -1,20 +1,27 @@
 package com.mhp.cocacola.cocacolafestival;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.Calendar;
 
 public class FirstQuestion extends AppCompatActivity {
 
     private CheckBox checkBox1, checkBox2, checkBox3;
     private TextView textQuestionTextView;
+    boolean isChecked =false;
     int step = 0;
     String[] questions={"1. Când se anunță datele unui festival, de obicei:",
-                        "2. tDe obicei, la festivaluri, sunt însoțit de:",
+                        "2. De obicei, la festivaluri, sunt însoțit de:",
                         "3. În general, la festivaluri merg pentru:" ,
                         "4. În timpul concertelor, îmi petrec timpul:",
                         "5. Câștigi un bilet la Untold. Ce faci?"};
@@ -42,91 +49,100 @@ public class FirstQuestion extends AppCompatActivity {
         changeText(step);
         step++;
 
+
+
     }
 
 
     public void didTapContinueQuiz(View view) {
 
-        switch (step){
-            case(1):{
-                if( checkBox1.isChecked()){
-                    result[step-1]="Lider";
+        if(isChecked) {
+            switch (step) {
+
+                case (1): {
+                    if (checkBox1.isChecked()) {
+                        result[step - 1] = "Lider";
+                    }
+                    if (checkBox2.isChecked()) {
+                        result[step - 1] = "Spontan";
+                    }
+                    if (checkBox3.isChecked()) {
+                        result[step - 1] = "Conectat la grup";
+                    }
+                    changeText(step);
+                    step++;
+                    break;
                 }
-                if( checkBox2.isChecked()){
-                    result[step-1]="Spontan";
+                case (2): {
+                    if (checkBox1.isChecked()) {
+                        result[step - 1] = "Conectat la grup";
+                    }
+                    if (checkBox2.isChecked()) {
+                        result[step - 1] = "Lider";
+                    }
+                    if (checkBox3.isChecked()) {
+                        result[step - 1] = "Spontan";
+                    }
+
+                    changeText(step);
+                    step++;
+                    break;
                 }
-                if( checkBox3.isChecked()){
-                    result[step-1]="Conectat la grup";
+                case (3): {
+                    if (checkBox1.isChecked()) {
+                        result[step - 1] = "Spontan";
+                    }
+                    if (checkBox2.isChecked()) {
+                        result[step - 1] = "Lider";
+                    }
+                    if (checkBox3.isChecked()) {
+                        result[step - 1] = "Conectat la grup";
+                    }
+                    changeText(step);
+                    step++;
+                    break;
                 }
-                changeText(step);
-                step++;
-                break;
-            }
-            case(2):{
-                if( checkBox1.isChecked()){
-                    result[step-1]="Conectat la grup";
+                case (4): {
+                    if (checkBox1.isChecked()) {
+                        result[step - 1] = "Lider";
+                    }
+                    if (checkBox2.isChecked()) {
+                        result[step - 1] = "Conectat la grup";
+                    }
+                    if (checkBox3.isChecked()) {
+                        result[step - 1] = "Spontan";
+                    }
+                    changeText(step);
+                    step++;
+                    break;
                 }
-                if( checkBox2.isChecked()){
-                    result[step-1]="Lider";
-                }
-                if( checkBox3.isChecked()){
-                    result[step-1]="Spontan";
+                case (5): {
+                    if (checkBox1.isChecked()) {
+                        result[step - 1] = "Spontan";
+                    }
+                    if (checkBox2.isChecked()) {
+                        result[step - 1] = "Lider";
+                    }
+                    if (checkBox3.isChecked()) {
+                        result[step - 1] = "Conectat la grup";
+                    }
+
+                    Button next = (Button) findViewById(R.id.continueButton);
+                    Intent myIntent = new Intent(view.getContext(), CalculatingResults.class);
+                    myIntent.putExtra("result", result);
+                    startActivityForResult(myIntent, 0);
                 }
 
-                changeText(step);
-                step++;
-                break;
             }
-            case(3):{
-                if( checkBox1.isChecked()){
-                    result[step-1]="Spontan";
-                }
-                if( checkBox2.isChecked()){
-                    result[step-1]="Lider";
-                }
-                if( checkBox3.isChecked()){
-                    result[step-1]="Conectat la grup";
-                }
-                changeText(step);
-                step++;
-                break;
-            }
-            case(4):{
-                if( checkBox1.isChecked()){
-                    result[step-1]="Lider";
-                }
-                if( checkBox2.isChecked()){
-                    result[step-1]="Conectat la grup";
-                }
-                if( checkBox3.isChecked()){
-                    result[step-1]="Spontan";
-                }
-                changeText(step);
-                step++;
-                break;
-            }
-            case(5):{
-                if( checkBox1.isChecked()){
-                    result[step-1]="Spontan";
-                }
-                if( checkBox2.isChecked()){
-                    result[step-1]="Lider";
-                }
-                if( checkBox3.isChecked()){
-                    result[step-1]="Conectat la grup";
-                }
-
-                Button next = (Button) findViewById(R.id.continueButton);
-                Intent myIntent = new Intent(view.getContext(), CalculatingResults.class);
-                myIntent.putExtra("result",result);
-                startActivityForResult(myIntent, 0);
-            }
+        }else{
+            Toast.makeText(getApplicationContext(), "Te rugam alege o varianta.",
+                    Toast.LENGTH_SHORT).show();
 
         }
-
     }
 
     private void changeText(int i){
+        isChecked=false;
         checkBox1.setChecked(false);
         checkBox2.setChecked(false);
         checkBox3.setChecked(false);
@@ -143,6 +159,7 @@ public class FirstQuestion extends AppCompatActivity {
         switch(view.getId()) {
 
             case R.id.checkbox1:
+                isChecked=true;
                 checkBox1.setChecked(true);
                 checkBox2.setChecked(false);
                 checkBox3.setChecked(false);
@@ -150,6 +167,7 @@ public class FirstQuestion extends AppCompatActivity {
                 break;
 
             case R.id.checkbox2:
+                isChecked=true;
                 checkBox2.setChecked(true);
                 checkBox1.setChecked(false);
                 checkBox3.setChecked(false);
@@ -157,6 +175,7 @@ public class FirstQuestion extends AppCompatActivity {
                 break;
 
             case R.id.checkbox3:
+                isChecked=true;
                 checkBox3.setChecked(true);
                 checkBox1.setChecked(false);
                 checkBox2.setChecked(false);
